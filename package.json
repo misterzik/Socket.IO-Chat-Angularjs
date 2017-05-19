@@ -1,8 +1,9 @@
 {
-  "name": "application-name",
-  "version": "0.0.0",
-  "private": true,
-  "dependencies": {
+  "name": "cnbc-angular-socket-io",
+   "version": "1.0.0",
+   "author": "Nick <nickjrod@gmail.com>",
+   "private": true,
+   "dependencies": {
     "socket.io": "~0.9.16",
     "express": "~3.2.6",
     "jade": "~0.31.2"

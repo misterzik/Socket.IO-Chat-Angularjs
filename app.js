@@ -1,11 +1,9 @@
-
 /**
- * Module dependencies
+ * Module dependencies - MrZ
  */
 
 var express = require('express'),
   routes = require('./routes'),
-  api = require('./routes/api'),
   http = require('http'),
   path = require('path');
 
@@ -14,10 +12,10 @@ var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 
 /**
- * Configuration
+ * Configuration - MrZ
  */
 
-// all environments
+// Environments  - MrZ
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
@@ -27,38 +25,34 @@ app.use(express.methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
 
-// development only
+// Development only - MrZ
 if (app.get('env') === 'development') {
   app.use(express.errorHandler());
 }
 
-// production only
+// Production only - MrZ
 if (app.get('env') === 'production') {
-  // TODO
+  // Basic Error Handling for now,
+  app.use(express.errorHandler());
 };
 
-
 /**
- * Routes
+ * Routes As Express(MiddleWare) - MrZ
  */
 
-// serve index and view partials
 app.get('/', routes.index);
-app.get('/partials/:name', routes.partials);
+//app.get('/partials/:name', routes.partials);
 
-// JSON API
-app.get('/api/name', api.name);
-
-// redirect all others to the index (HTML5 history)
+// Redirect all others to the index (HTML5 history) - MrZ
 app.get('*', routes.index);
 
-// Socket.io Communication
+// Socket.io Communication - MrZ
 io.sockets.on('connection', require('./routes/socket'));
 
 /**
- * Start Server
+ * Start Server - MrZ
  */
 
-server.listen(app.get('port'), function () {
+server.listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));
 });

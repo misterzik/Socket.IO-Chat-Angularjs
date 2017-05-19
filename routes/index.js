@@ -1,5 +1,6 @@
+
 /*
- * GET home page.
+ * GET Home page for SPA - MrZ
  */
 
 exports.index = function(req, res){

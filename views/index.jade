@@ -2,23 +2,45 @@ extends layout
 
 block body
   div(ng-controller='AppCtrl')
-    h2 Hello {{name}}
-    ul.menu
-      li
-        a(href='view1') view1
-      li
-        a(href='view2') view2
+    .container
+      h1 Request Media Chat  
+          .row
+            .col-md-6
+              h3 Messages
+              |     
+              .overflowableMsg
+                p(ng-repeat='message in messages', ng-class="{alert: message.user == 'chatroom'}")
+                  | {{message.user}}: {{message.text}}
+            |   
+            .col-md-6
+              h3 Users
+              |     
+              .overflowableUser
+                p(ng-repeat='user in users') {{user}}
+            |   
+            .col-md-6.clr
+              form(ng-submit='sendMessage()')
+                .messageInput
+                  p
+                    | Message:
+                    input(class='form-control', placeholder="Enter Text...", ng-model='message')
+                    |       
+                    input(type='submit', value='Send', class="btn btn-success btn-xs")
+                    
+                
+            .col-md-6.clr
+              .messageInput    
+                p
+                  | Your current user name is {{name}}
+                form(ng-submit='changeName()')
+                  input(ng-model='newName', class='form-control', placeholder="Change Username")
+                  |         
+                  input(type='submit', value='Change Name', class="btn btn-warning btn-xs")
 
-    div(ng-view)
 
-    div
-      | SocketIO v
-      span(app-version)
 
+  script(src='js/lib/angular/angular.js')
   script(src='/socket.io/socket.io.js')
-  script(src='bower_components/angular/angular.js')
-  script(src='bower_components/angular-route/angular-route.js')
-  script(src='bower_components/angular-socket-io/socket.js')
   script(src='js/app.js')
   script(src='js/services.js')
   script(src='js/controllers.js')

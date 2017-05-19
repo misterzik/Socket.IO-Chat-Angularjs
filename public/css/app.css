@@ -1,30 +1,49 @@
 /* app css stylesheet */
 
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+.overflowable {
+  height: 240px;
+  overflow-y: auto;
+  border: 1px solid #000;
 }
 
-.menu:before {
-  content: "[";
+.overflowableMsg {
+  height: 240px;
+  overflow-y: auto;
+  border: 1px solid #000;
+  font-size: 18px;
+  color: blue;
 }
 
-.menu:after {
-  content: "]";
+p {
+    margin-top: 0;
+    margin-bottom: 0rem!important;
 }
 
-.menu > li {
-  display: inline;
+.overflowableUser {
+  height: 240px;
+  overflow-y: auto;
+  border: 1px solid #000;
+  font-size: 18px;
+  color: red;
 }
 
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
+.overflowable p {
+  margin: 0;
 }
 
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
+/*
+ * Message Submit
+ */
+.messageInput p {
+     font-size: 17px;
+     margin-top: 15px;
+ }
+
+.col {
+  float: left;
+  width: 350px;
+}
+
+.clr {
+  clear: both;
 }
