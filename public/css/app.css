@@ -1,0 +1,72 @@
+/* app css stylesheet */
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+/*
+ *  ByPass ng-cloak only
+ */
+
+ .showAlert.alert.alert-warning.ng-hide {
+     display: block!important;
+ }
+
+ /* End ByPass  */
+
+
+.overflowable {
+  height: 240px;
+  overflow-y: auto;
+  border: 1px solid #000;
+}
+
+.overflowableMsg {
+  height: 240px;
+  overflow-y: auto;
+  border: 1px solid #000;
+  font-size: 18px;
+  color: blue;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0rem!important;
+}
+
+.overflowableUser {
+  height: 240px;
+  overflow-y: auto;
+  border: 1px solid #000;
+  font-size: 18px;
+  color: red;
+}
+
+.overflowable p {
+  margin: 0;
+}
+
+/*
+ * Message Submit
+ */
+.messageInput p {
+     font-size: 17px;
+     margin-top: 15px;
+ }
+
+.col {
+  float: left;
+  width: 350px;
+}
+
+.clr {
+  clear: both;
+}
+
+.alert {
+    padding: 4px 6px!important;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    color: green!important;
+}
